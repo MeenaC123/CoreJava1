@@ -1,0 +1,53 @@
+package differencebetweenstaticandinstance;
+ class VariableDemo2 {
+	static int count=0;//static
+	 int cnt=0;//instance
+	 
+	public void increment() {
+		count++;
+	}
+	
+	public void incre(){
+		cnt++;
+   }
+	
+}
+
+	public class StaticEx{
+	public static void main(String[] args) {
+		
+		/*
+		 * static variables are shared among the instance of the class
+		 * useful when we need to do memory management.in some cases
+		 * commmon value for all the instance like global variable the
+		 * better to declare them static   as this can save memory( because)
+		 * copy is created for static variables.
+		 */
+		VariableDemo2 obj1=new VariableDemo2();
+		VariableDemo2 obj2=new VariableDemo2();
+		VariableDemo2 obj3=new VariableDemo2();
+		VariableDemo2 obj4=new VariableDemo2();
+		obj1.increment();//count-1
+		obj2.increment();//count-
+        obj1.incre();//cnt-1
+        obj2.incre();//cnt-1
+        System.out.println("Obj1 Static:count is="+obj1.count);
+        System.out.println("Obj2 Static:count is="+obj2.count);
+        System.out.println("Obj1 Instance:count is="+obj1.cnt);//0--->1
+        System.out.println("Obj2 Instance:count is="+obj2.cnt);//0-->
+        System.out.println("Obj3 Instance:count is="+obj3.cnt);//0
+        System.out.println("Obj4 Instance:count is="+obj4.cnt);//0
+
+
+
+
+        
+
+
+
+		
+	
+
+	}
+
+	}
